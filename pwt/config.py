@@ -57,8 +57,8 @@ else:
     config["hotkey"]["float_focused_window"] = "alt+shift+t"
 
     config["window"] = OrderedDict()
-    config["window"]["float"] = "progman;#32770;StartMenuSizingFrame"
-    config["window"]["decorate"] = "Chrome_WidgetWin_0;ConsoleWindowClass"
+    config["window"]["float"] = "progman;#32770;StartMenuSizingFrame;ApplicationFrameWindow"
+    config["window"]["decorate"] = "Chrome_WidgetWin_0;Chrome_WidgetWin_1;ConsoleWindowClass"
 
     with open("config.ini", "w") as configfile:
         config.write(configfile)
