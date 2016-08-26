@@ -4,7 +4,7 @@ PWT is the fruit of my frustration towards the traditional windowing system. The
 
 ## Install
 
-To run a portable version of PWT download the a directory from build/. 
+To run a portable version of PWT download the a directory from build/.
 To launch it with python run pwt.py with a python3.X executable.
 
 ## Configure
@@ -19,7 +19,7 @@ Center_cursor expects a boolean value to either enable or disable the feature.
 
 ### Hotkey
 
-The hotkey value expects the form of < modifier+modifier.. >+< key >. [Possible Keys](http://code.google.com/p/python-windows-tiler/source/browse/pwt/hotkey.py)
+The hotkey value expects the form of < modifier+modifier.. >+< key >.
 
   * remove_window_from_master = alt+shift+l
   * add_window_to_master = alt+shift+h
@@ -62,7 +62,7 @@ The hotkey value expects the form of < modifier+modifier.. >+< key >. [Possible 
   * tile_focused_window = alt+t
   * float_focused_window = alt+shift+t
 
-### Window 
+### Window
 
 Window holds the window rules, currently there are 2 rules defined, float and decorate. Due to the nature of some apps they struggle with being tiled. Forcing the decorations on can help get rid of some of the glitches, if that doesn't help you can force float them. If a window gets tiled that shouldn't get tiled you should also add it to float.
 
@@ -71,6 +71,6 @@ The expected format is < window classname >;< window classname >
   * float = `progman;#32770`
   * decorate = `Chrome_WidgetWin_0;ConsoleWindowClass`
 
-### Example 
+### Example
 
-You can remove keybinds from the config to ignore the entire function as I do in my [My config](http://sourcetumble.appspot.com/my-config-file/).
+You can remove keybinds from the config to ignore the entire function.
