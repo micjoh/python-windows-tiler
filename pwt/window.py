@@ -438,6 +438,17 @@ class Window(object):
 
             return None
 
+    @property
+    def title(self):
+        '''
+        Returns the text from the title bar of the window.
+        '''
+        try:
+            return win32gui.GetWindowText(self.hWindow)
+        except win32gui.error:
+            logging.exception("Error while getting window's title text")
+
+            return None
 
     @property
     def windowmessage(self):
