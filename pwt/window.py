@@ -6,22 +6,22 @@ import win32api
 
 import pwt.config
 
-from win32con import SWP_FRAMECHANGED 
-from win32con import SWP_NOMOVE 
-from win32con import SWP_NOSIZE 
+from win32con import SWP_FRAMECHANGED
+from win32con import SWP_NOMOVE
+from win32con import SWP_NOSIZE
 from win32con import SWP_NOZORDER
 from win32con import SW_HIDE
 from win32con import SW_FORCEMINIMIZE
 from win32con import SW_SHOWNORMAL
 
-from win32con import GW_OWNER 
-from win32con import GWL_STYLE 
-from win32con import GWL_EXSTYLE 
+from win32con import GW_OWNER
+from win32con import GWL_STYLE
+from win32con import GWL_EXSTYLE
 
-from win32con import WM_CLOSE 
+from win32con import WM_CLOSE
 
-from win32con import WS_CAPTION 
-from win32con import WS_EX_APPWINDOW 
+from win32con import WS_CAPTION
+from win32con import WS_EX_APPWINDOW
 from win32con import WS_EX_CONTROLPARENT
 from win32con import WS_EX_TOOLWINDOW
 from win32con import WS_EX_WINDOWEDGE
@@ -33,7 +33,7 @@ class Window(object):
         self.hotkeys = []
 
         self.hWindow = hWindow
-        
+
         config = pwt.config.config
 
         self.floating = self.classname in config["window"]["float"].split(";")
@@ -57,7 +57,7 @@ class Window(object):
 
             value = win32gui.GetWindowLong(self.hWindow, GWL_EXSTYLE)
             owner = win32gui.GetWindow(self.hWindow, GW_OWNER)
-            
+
             if not win32gui.GetParent(self.hWindow):
 
                 if (not owner and not value & WS_EX_TOOLWINDOW) or value & WS_EX_APPWINDOW:
@@ -89,7 +89,7 @@ class Window(object):
                 return True
 
             else:
-            
+
                 return False
 
         except win32gui.error:
@@ -111,7 +111,7 @@ class Window(object):
 
                 style = win32gui.GetWindowLong(self.hWindow, GWL_STYLE)
 
-                style -= WS_CAPTION 
+                style -= WS_CAPTION
 
                 win32gui.SetWindowLong(self.hWindow, GWL_STYLE, style)
 
@@ -211,10 +211,10 @@ class Window(object):
 
     def hide(self):
         """
-        Puts the window under a hidden state
-        Returns true on succes
-        Returns false on error
-        """
+        Puts the window under a hidden state
+        Returns true on succes
+        Returns false on error
+        """
 
         try:
 
@@ -330,7 +330,7 @@ class Window(object):
         Returns False on error
         """
 
-        try: 
+        try:
 
             rect = self.windowrectangle
 
@@ -411,7 +411,7 @@ class Window(object):
         Returns the window's bounding rectangle
         """
 
-        try: 
+        try:
 
             return win32gui.GetWindowRect(self.hWindow)
 
@@ -472,7 +472,7 @@ class Window(object):
 
             return None
 
-      
+
     @staticmethod
     def focused_window():
         """
