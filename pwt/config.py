@@ -5,18 +5,15 @@ from collections import OrderedDict
 config = configparser.ConfigParser(dict_type=OrderedDict)
 
 if os.path.isfile("config.ini"):
-
     config.read("config.ini")
-
 else:
-
     config["global"] = OrderedDict()
     config["global"]["center_cursor"] = "yes"
     config["global"]["left_margin"] = "20"
     config["global"]["right_margin"] = "20"
     config["global"]["top_margin"] = "0"
     config["global"]["bottom_margin"] = "0"
-    
+
     config["hotkey"] = OrderedDict()
     config["hotkey"]["remove_window_from_master"] = "alt+shift+l"
     config["hotkey"]["add_window_to_master"] = "alt+shift+h"
@@ -60,9 +57,8 @@ else:
     config["hotkey"]["float_focused_window"] = "alt+shift+t"
 
     config["window"] = OrderedDict()
-    config["window"]["float"] = "progman;#32770"
+    config["window"]["float"] = "progman;#32770;StartMenuSizingFrame"
     config["window"]["decorate"] = "Chrome_WidgetWin_0;ConsoleWindowClass"
 
     with open("config.ini", "w") as configfile:
-        
         config.write(configfile)
